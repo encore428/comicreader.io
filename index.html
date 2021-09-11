@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>xkcd comics</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://unpkg.com/tailwindcss@^2/dist/utilities.min.css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <header class="border-b border-gray-100">
+            <div class="bg-pink-800 text-white">
+                <div class="max-w-6xl mx-auto px-4 py-2">
+                    <nav class="flex items-center justify-between gap-3">
+                        <div class="text-2xl">xkcd comic viewer</div>
+                        <form id="goform">
+                            <label htmlFor="gocomic">Comic#</label>
+                            <input id="gocomic" class="form-input mt-1 w-14" type="number" name="gocomic" size="4" value="" />
+                            <button id="btngocomic" disabled>Go</button>
+                        </form>
+                        <button id='gorand' class="px-2 hover:text-gray-500" disabled >Random comics</button>
+                        <nav class="flex justify-end items-center flex-wrap gap-2">
+                            <label for="pageSz">Comics per page</label>
+                            <select id="pageSz" value="3">
+                                <option value="1">1</option>
+                                <option value="3">3</option>
+                                <option value="5">5</option>
+                            </select>            
+                        </nav>
+                        <nav class="flex justify-end items-center flex-wrap gap-2">
+                            <label>Paging</label>
+                            <button id='pageU' class="px-2 hover:text-gray-500" disabled >Previous</button>
+                            <button id='pageD' class="px-2 hover:text-gray-500" disabled >Next</button>
+                        </nav>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="loading" class="flex justify-center text-4xl">
+            <br><br>Loading, please wait ...
+        </div>
+        <div id="content" class="max-w-10xl mx-auto py-1 px-4 sm:px-6 lg:px-8 hidden">
+            <div id="comics">
+            </div>
+        </div>
+    </body>
+    <script src="./comics.js"></script>
+</html>
+</>
